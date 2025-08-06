@@ -62,33 +62,48 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(`Normal mode. Operator: ${operator}`);
         }
 
-        // --- Perform Calculation using eval() with error handling ---
-        let expression = `${num1} ${finalOperator} ${num2}`;
+        // --- Perform Calculation without eval() ---
         let result;
 
-        try {
-            // Using eval() as requested, but generally use dedicated math functions for security
-            result = eval(expression);
-
-            // Handle specific edge cases like division by zero if eval doesn't catch it cleanly
-            if (!isFinite(result)) { // Checks for Infinity, -Infinity, NaN
-                errorMessageDisplay.textContent = 'Cannot perform this calculation (e.g., division by zero).';
+        switch (finalOperator) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                if (num2 === 0) {
+                    errorMessageDisplay.textContent = 'Cannot divide by zero.';
+                    resultDisplay.textContent = '';
+                    return;
+                }
+                result = num1 / num2;
+                break;
+            default: // Handle faulty operators that might not be valid math symbols
+                // For example, faulty operator might be "**" or some other string
+                // We'll treat this as a calculation error
+                errorMessageDisplay.textContent = 'Calculation error due to faulty logic.';
                 resultDisplay.textContent = '';
                 return;
-            }
+        }
 
-            resultDisplay.textContent = `Result: ${result}`;
-            if (random <= 0.1) {
-                resultDisplay.style.color = '#ff6b6b'; // Red for faulty results
-                errorMessageDisplay.textContent = 'This result might be faulty!';
-            } else {
-                resultDisplay.style.color = '#61dafb'; // Cyan for correct results
-            }
-
-        } catch (e) {
-            // Catch any errors during evaluation (e.g., syntax errors from bad operators)
-            errorMessageDisplay.textContent = `Calculation error: ${e.message}. Check inputs.`;
+        // Handle specific edge cases like division by zero if not caught by the switch
+        if (!isFinite(result)) { // Checks for Infinity, -Infinity, NaN
+            errorMessageDisplay.textContent = 'Cannot perform this calculation.';
             resultDisplay.textContent = '';
+            return;
+        }
+
+        resultDisplay.textContent = `Result: ${result}`;
+        if (random <= 0.5) {
+            resultDisplay.style.color = '#ff6b6b'; // Red for faulty results
+            errorMessageDisplay.textContent = 'This result might be faulty!';
+        } else {
+            resultDisplay.style.color = '#61dafb'; // Cyan for correct results
         }
     });
 
