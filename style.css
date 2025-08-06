@@ -1,0 +1,157 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #282c34; /* Dark background */
+    color: #e0e0e0; /* Light text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.calculator-container {
+    background-color: #3a3f47; /* Slightly lighter dark background for the calculator */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive; /* Retro gaming font for title */
+    font-size: 2.2em;
+    color: #61dafb; /* Cyan accent color */
+    margin-bottom: 15px;
+    text-shadow: 0 0 8px rgba(97, 218, 251, 0.6);
+}
+
+.description {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #b0b0b0;
+}
+
+/* Input Group */
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Allow inputs to wrap on smaller screens */
+}
+
+.input-group input {
+    width: 120px; /* Fixed width for desktop */
+    padding: 12px 15px;
+    border: 1px solid #61dafb; /* Cyan border */
+    border-radius: 8px;
+    background-color: #4a4f58; /* Darker input background */
+    color: #e0e0e0;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #21a1f1; /* Brighter cyan on focus */
+    box-shadow: 0 0 10px rgba(97, 218, 251, 0.4);
+}
+
+.input-group input::placeholder {
+    color: #a0a0a0;
+}
+
+/* Button */
+button {
+    background-color: #61dafb; /* Cyan button */
+    color: #282c34; /* Dark text on button */
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #21a1f1; /* Darker cyan on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Result Area */
+.result-area {
+    background-color: #4a4f58; /* Darker background for result */
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px dashed rgba(97, 218, 251, 0.3); /* Dashed accent border */
+    min-height: 70px; /* Ensure space for result */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#result {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.error {
+    color: #ff6b6b; /* Red for errors */
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .calculator-container {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .description {
+        font-size: 1em;
+    }
+
+    .input-group {
+        flex-direction: column; /* Stack inputs vertically on small screens */
+        gap: 15px;
+    }
+
+    .input-group input {
+        width: 80%; /* Make inputs wider on small screens */
+        max-width: 250px; /* Limit max width */
+    }
+
+    button {
+        width: 80%;
+        max-width: 250px;
+        font-size: 1em;
+        padding: 12px 25px;
+    }
+
+    #result {
+        font-size: 1.5em;
+    }
+}
