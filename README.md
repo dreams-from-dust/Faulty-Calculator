@@ -21,3 +21,5 @@ A retro-themed calculator that demonstrates core JavaScript principles. This pro
 To see the project live, you can visit the GitHub Pages link for this repository once it's deployed.
 
 ### Getting Started
+
+Simply clone this repository to your local machine and open the `index.html` file in your web browser.
