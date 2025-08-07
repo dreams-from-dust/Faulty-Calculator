@@ -16,10 +16,6 @@ A retro-themed calculator that demonstrates core JavaScript principles. This pro
 * CSS3
 * JavaScript (ES6+)
 
-### How to View
-
-To see the project live, you can visit the GitHub Pages link for this repository once it's deployed.
-
 ### Getting Started
 
-Simply clone this repository to your local machine and open the `index.html` file in your web browser.
+To view this project, simply clone this repository to your local machine and open the `index.html` file in your web browser.
