@@ -66,6 +66,7 @@ h1 {
 
 .input-group input::placeholder {
     color: #a0a0a0;
+    font-size: 14px;
 }
 
 /* Button */
@@ -155,3 +156,4 @@ button:active {
         font-size: 1.5em;
     }
 }
+
