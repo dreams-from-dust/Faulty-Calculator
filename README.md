@@ -16,6 +16,10 @@ A retro-themed calculator that demonstrates core JavaScript principles. This pro
 * CSS3
 * JavaScript (ES6+)
 
+### Live Demo
+
+You can view a live demonstration of this project here: [https://dreams-from-dust.github.io/Faulty-Calculator/](https://dreams-from-dust.github.io/Faulty-Calculator/)
+
 ### Getting Started
 
-To view this project, simply clone this repository to your local machine and open the `index.html` file in your web browser.
+Simply clone this repsitory to your local machine and open the `index.html` file in your web browser.
